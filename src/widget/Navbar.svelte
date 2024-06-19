@@ -4,10 +4,10 @@
 	let opacity = 1;
   
 	$: {
-	  if (y < 200) {
+	  if (y < 600) {
 		opacity = 1;
-	  } else if (y < 450) {
-		opacity = 1 - (y - 200) / 100;
+	  } else if (y < 850) {
+		opacity = 1 - (y - 600) / 100;
 	  } else {
 		opacity = 0;
 	  }
@@ -35,7 +35,7 @@
 		  </li>
 		  <li class="nav-item">
 			<a class="nav-link" href="https://www.hockeycomputindo.com/2021/10/svelte-bootstrap-free-download-source.html">
-			  Documentation →
+			  Nous contacter →
 			</a>
 		  </li>
 		</ul>
@@ -58,7 +58,7 @@
 	  z-index: 1000;
 	  width: 100%;
 	  overflow-x: hidden;
-	  background-color: rgba(0, 0, 0, 0.8);
+	  background-color: rgba(0, 0, 0, 0.2);
 	  backdrop-filter: blur(10px);
 	  -webkit-backdrop-filter: blur(10px);
 	  font-family: 'Space_grotesk', sans-serif;

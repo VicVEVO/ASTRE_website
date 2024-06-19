@@ -51,44 +51,20 @@
   </div>
 
   <div class="customers">
-    <h1 class="text-black partenaires"> Nos partenaires </h1> 
-    <div class="logo-container">
-      <div class="logo">
-        <img src="/cnes.png" alt="Logo 1">
-      </div>
-      <div class="logo">
-        <img src="/csut.png" alt="Logo 2">
-      </div>
-      <div class="logo">
-        <img src="/enac.png" alt="Logo 3">
-      </div>
-      <div class="logo">
-        <img src="/n7.png" alt="Logo 4">
-      </div>
-      <div class="logo">
-        <img src="/sup.png" alt="Logo 5">
-      </div>
-      <div class="logo">
-        <img src="/ups.png" alt="Logo 6">
-      </div>
-      <div class="logo">
-        <img src="/cnes.png" alt="Logo 7">
-      </div>
-      <div class="logo">
-        <img src="/csut.png" alt="Logo 8">
-      </div>
-      <div class="logo">
-        <img src="/enac.png" alt="Logo 9">
-      </div>
-      <div class="logo">
-        <img src="/n7.png" alt="Logo 10">
-      </div>
-      <div class="logo">
-        <img src="/sup.png" alt="Logo 11">
-      </div>
-      <div class="logo">
-        <img src="/ups.png" alt="Logo 12">
-      </div>
+    <h1 class="text-black partenaires">Nos partenaires</h1>
+    <div class="photobanner">
+      <img src="/cnes.png" alt="Logo 1">
+      <img src="/csut.png" alt="Logo 2">
+      <img src="/enac.png" alt="Logo 3">
+      <img src="/n7.png" alt="Logo 4">
+      <img src="/sup.png" alt="Logo 5">
+      <img src="/ups.png" alt="Logo 6">
+      <img src="/cnes.png" alt="Logo 7">
+      <img src="/csut.png" alt="Logo 8">
+      <img src="/enac.png" alt="Logo 9">
+      <img src="/n7.png" alt="Logo 10">
+      <img src="/sup.png" alt="Logo 11">
+      <img src="/ups.png" alt="Logo 12">
     </div>
   </div>
 
@@ -178,40 +154,36 @@
       font-family: 'Space', sans-serif;
     }
     .customers {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      margin-top: -70px;
+      height: 220px;
+      position: relative;
       overflow: hidden;
       background-color: #f0f0f0;
-      margin-top: -50px;
-      height: 200px;
-      position: relative;
-      z-index: 1;
+      text-align: center;
+      padding: 20px 0;
     }
     .partenaires {
-      margin-top: -20px;
+      margin-top: 15px;
       font-size: 1rem;
     }
-    .logo-container {
-      display: flex;
-      animation: scroll 20s linear infinite;
-      margin-top: 20px;
+    .photobanner {
+      display: inline-block;
+      margin-top: 10px;
+      white-space: nowrap;
+      animation: bannermove 40s linear infinite;
     }
-    @keyframes scroll {
+    .photobanner img {
+      height: 90px;
+      margin: 0 60px;
+      vertical-align: middle;
+    }
+    @keyframes bannermove {
       0% {
-        transform: translateX(0%);
+        transform: translate(0, 0);
       }
       100% {
-        transform: translateX(-100%);
+        transform: translate(-50%, 0);
       }
-    }
-    .logo {
-      flex: 0 0 auto;
-      margin: 0 50px;
-    }
-    .logo img {
-      max-height: 70px;
     }
     .part-2 {
       position: relative;
@@ -248,7 +220,6 @@
       position: absolute;
       top: 0;
       left: 10;
-      opacity: 0.5;
       z-index: 2;
     }
     .video-wrapper {
