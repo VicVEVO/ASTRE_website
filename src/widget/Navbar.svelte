@@ -34,8 +34,8 @@
 			<Link class="nav-link" to="/actualites">Actualités</Link>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="https://www.hockeycomputindo.com/2021/10/svelte-bootstrap-free-download-source.html">
-			  Nous contacter →
+			<a class="nav-link" href="mailto:astretoulouse@gmail.com?subject=Demande d'information supplémentaires">
+				Nous contacter →
 			</a>
 		  </li>
 		</ul>
@@ -81,6 +81,7 @@
 	}
 	.navbar-nav .nav-item .nav-link {
 	  color: rgb(255, 255, 255);
+	  background-color: #111110;
 	  transition: color 0.3s ease;
 	}
 	.navbar-nav .nav-item .nav-link:hover {
