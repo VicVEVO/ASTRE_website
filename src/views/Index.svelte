@@ -103,8 +103,7 @@
         <strong>ASTRE'LOON</strong>
       </h1>
       <h2 class="text-white smaller projet-2">
-        ASTRE'LOON est le projet de ballon sonde de l'ASTRE. Ce dernier participe à <br> la campagne annuelle de lancement C'Space organisée par le CNES.
-      </h2>
+        ASTRE'LOON est le projet de ballon sonde de l'ASTRE. Ce dernier participe à <br> la campagne annuelle de lancement C'Space organisée par le CNES.      </h2>
       <a href="projets" class="btn btn-primary rounded-pill btn-lg projet-2 btn-custom">
         Lire la suite
       </a>
@@ -164,6 +163,7 @@
       color: #7d7d7d;
       font-size: calc(1rem + 0.55vw);
       margin-top: -1rem;
+      text-align: justify;
     }
     .big-guillemet {
       color: #7d7d7d;
@@ -287,17 +287,17 @@
     .projet-1 {
       position: relative;
       left: 20%;
-      top: -13rem
+      top: -17rem;
     }
     .projet-2 {
       position: relative;
       right: 20%;
-      top: 0rem
+      top: 0rem;
     }
     .projet-3 {
       position: relative;
       left: 20%;
-      top: 13rem
+      top: 17rem;
     }
     .welcome {
       position: relative;
@@ -383,77 +383,142 @@
     .content {
       position: relative;
       text-align: center;
-      padding: 0.5rem;
       z-index: 3;
       text-shadow: 0rem .1rem .2rem rgb(4, 1, 15);
-    }
+    }    
 
   /* Styles pour les écrans moyens */
   @media (max-width: 1280px) {
-    .big-logo {
-      width: 50vw;
-      left: 10vw;
+    .welcome {
+      height: 60rem;
+      margin-top: -5rem;
+      padding-top: 0rem;
     }
-    .img-rocket {
-      width: 45vw;
-      top: 65%;
-      left: 10%;
+    .big-logo {
+      width: 35rem;
+      left: 8rem;
+    }
+    video {
+      max-width: 80%;
+    }
+    .sum-up {
+      height: 32rem;
+      margin-top: 2rem;
+      padding-top: 0rem;
+      padding: 5rem;
+    }
+    .photobanner {
+      animation: bannermove 20s linear infinite;
+    }
+    .projects {
+      height: 100rem;
+      margin-top: 0rem;
+      padding-top: 0rem;
+    }
+    .content.projet-1 {
+      left: -10%;
+      top: 0rem;
+    }
+    .content.projet-2 {
+      left: 0%;
+      top: 0rem;
+    }
+    .content.projet-3 {
+      left: 3%;
+      top: 0rem;
     }
     .img-satellite {
-      width: 45vw;
-      top: 5%;
-      left: 10%;
+      width: 30rem;
+      top: 12%;
+      left: 25%;
     }
     .img-balloon {
-      width: 20vw;
+      width: 10rem;
       top: 25%;
-      left: 60%;
+      left: 70%;
+    }
+    .img-rocket {
+      width: 5rem;
+      top: 65%;
+      left: 10%;
     }
   }
 
   /* Styles pour les petits écrans */
   @media (max-width: 768px) {
-    .big-logo {
-      width: 60vw;
-      left: 5vw;
-    }
-    .img-rocket {
-      width: 55vw;
-      top: 60%;
-      left: 5%;
-    }
-    .img-satellite {
-      width: 55vw;
-      top: 0%;
-      left: 5%;
-    }
-    .img-balloon {
-      width: 25vw;
-      top: 30%;
-      left: 55%;
-    }
   }
 
   /* Styles pour les très petits écrans */
   @media (max-width: 480px) {
-    .big-logo {
-      width: 70vw;
-      left: 5vw;
+    .small {
+      font-size: calc(1rem + 1.5vw);;
     }
-    .img-rocket {
-      width: 65vw;
-      top: 55%;
-      left: 5%;
+    .smaller {
+      font-size: calc(0.5rem + 0.25vw);
+    }
+    .welcome {
+      height: 45rem;
+      margin-top: -5rem;
+      padding-top: 0rem;
+    }
+    .big-logo {
+      width: 20rem;
+      left: 3.5rem;
+    }
+    video {
+      max-width: 90%;
+    }
+    .sum-up {
+      height: 30rem;
+      margin-top: 1rem;
+      padding-top: 0rem;
+      padding: 2rem;
+    }
+    .customers {
+      margin-top: 0rem;
+      height: 10rem;
+      padding: .5rem 0;
+    }
+    .photobanner {
+      padding: 1.5rem 0;
+      margin-top: -0rem;
+      animation: bannermove 15s linear infinite;
+    }
+    .photobanner img {
+      height: 3rem;
+      margin: 0 2rem;
+    }
+    .projects {
+      height: 80rem;
+      margin-top: 0rem;
+      padding-top: 0rem;
+    }
+    .content.projet-1 {
+      left: -13%;
+      top: 0rem;
+    }
+    .content.projet-2 {
+      left: 7%;
+      top: 0rem;
+    }
+    .content.projet-3 {
+      left: -8%;
+      top: 0rem;
     }
     .img-satellite {
-      width: 65vw;
-      top: 0%;
-      left: 5%;
+      width: 30rem;
+      top: 8%;
+      left: -2%;
     }
     .img-balloon {
-      width: 30vw;
-      top: 35%;
-      left: 50%;
+      width: 10rem;
+      top: 20%;
+      left: 62%;
+    }
+    .img-rocket {
+      width: 5rem;
+      top: 65%;
+      left: 10%;
     }
   }
 
