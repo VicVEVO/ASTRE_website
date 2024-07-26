@@ -18,13 +18,17 @@
   const handleScroll = () => {
   const scrollPosition = window.scrollY;
   const parallaxSpeed = -0.1;
-  
+
+  function easeOutCirc(x) {
+      return Math.sqrt(1 - Math.pow(x - 1, 2));
+  }
+  const easedScrollPosition = easeOutCirc(scrollPosition/window.innerHeight);
 
   video.style.transform = `translateY(${scrollPosition * parallaxSpeed}px)`;
   logo_img.style.transform = `translateY(${scrollPosition * parallaxSpeed / 2}px)`;
   satellite_img.style.transform = `rotate(${scrollPosition * parallaxSpeed / 20}deg)`;
   balloon_img.style.transform = `translateY(${scrollPosition * parallaxSpeed}px)`;
-  rocket_img.style.transform = `translateX(${6*-scrollPosition * parallaxSpeed}px)`;
+  rocket_img.style.transform = `translateX(${1000000000*easedScrollPosition}px)`;
 };
   onMount(() => {
     window.addEventListener('scroll', handleScroll);
@@ -239,7 +243,7 @@
       height: 50%;
       position: absolute;
       top: 60%;
-      left: -100%;
+      left: -00%;
       z-index: 2;
     }
     .img-satellite {
@@ -397,7 +401,11 @@
     }
     .big-logo {
       width: 35rem;
-      left: 8rem;
+      background-position: center;
+      background-size: contain;
+      width: 60%;
+      height: 100%;
+      position: absolute;
     }
     video {
       max-width: 80%;
@@ -463,8 +471,11 @@
       padding-top: 0rem;
     }
     .big-logo {
-      width: 20rem;
-      left: 3.5rem;
+      background-position: center;
+      background-size: contain;
+      width: 80%;
+      height: 100%;
+      position: absolute;
     }
     video {
       max-width: 90%;
