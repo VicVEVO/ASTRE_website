@@ -24,7 +24,7 @@
   logo_img.style.transform = `translateY(${scrollPosition * parallaxSpeed / 2}px)`;
   satellite_img.style.transform = `rotate(${scrollPosition * parallaxSpeed / 20}deg)`;
   balloon_img.style.transform = `translateY(${scrollPosition * parallaxSpeed}px)`;
-  rocket_img.style.transform = `translate(${-scrollPosition * parallaxSpeed}px, ${4 * scrollPosition * parallaxSpeed}px)`;
+  rocket_img.style.transform = `translateX(${6*-scrollPosition * parallaxSpeed}px)`;
 };
   onMount(() => {
     window.addEventListener('scroll', handleScroll);
@@ -235,11 +235,11 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      width: 35%;
-      height: 25%;
+      width: 100%;
+      height: 50%;
       position: absolute;
-      top: 120%;
-      left: -10%;
+      top: 60%;
+      left: -100%;
       z-index: 2;
     }
     .img-satellite {
@@ -296,8 +296,8 @@
     }
     .projet-3 {
       position: relative;
-      left: 20%;
-      top: 17rem;
+      left: 0%;
+      top: 15rem;
     }
     .welcome {
       position: relative;
@@ -328,6 +328,7 @@
       background-image: url('/big_bg.png');
       background-repeat: no-repeat;
       background-position: center;
+      overflow: hidden;
       background-size: cover;
       display: flex;
       flex-direction: column;
