@@ -19,16 +19,11 @@
   const scrollPosition = window.scrollY;
   const parallaxSpeed = -0.1;
 
-  function easeOutCirc(x) {
-      return Math.sqrt(1 - Math.pow(x - 1, 2));
-  }
-  const easedScrollPosition = easeOutCirc(scrollPosition/window.innerHeight);
-
   video.style.transform = `translateY(${scrollPosition * parallaxSpeed}px)`;
   logo_img.style.transform = `translateY(${scrollPosition * parallaxSpeed / 2}px)`;
-  satellite_img.style.transform = `rotate(${scrollPosition * parallaxSpeed / 20}deg)`;
+  satellite_img.style.transform = `rotate(${1.5*scrollPosition * parallaxSpeed / 20}deg)`;
   balloon_img.style.transform = `translateY(${scrollPosition * parallaxSpeed}px)`;
-  rocket_img.style.transform = `translateX(${1000000000*easedScrollPosition}px)`;
+  rocket_img.style.transform = `translate(${scrollPosition * parallaxSpeed}px, ${scrollPosition * parallaxSpeed}px) rotate(40deg) scaleX(-1)`;
 };
   onMount(() => {
     window.addEventListener('scroll', handleScroll);
@@ -128,6 +123,18 @@
 
   <div class="contacts">
     <h1 class="text-white partenaires">Nous contacter</h1>
+  <a href="https://www.facebook.com/AstreToulouse/" class="contact-button">
+      <img src="/facebook.png" alt="facebook">
+  </a>
+  <a href="https://www.instagram.com/astre_space/" class="contact-button">
+    <img src="/insta.png" alt="instagram">
+  </a>
+  <a href="https://twitter.com/AstreToulouse" class="contact-button">
+    <img src="/twitter.png" alt="twitter">
+  </a>
+  <a href="https://google.com" class="contact-button">
+    <img src="/youtube.png" alt="youtube">
+  </a>
   </div>
 
   <style>
@@ -223,6 +230,18 @@
       color: #222222;
       border-color: #3a3a3a;
     }
+    .contact-button {
+      width: 1.5rem;
+      height: 1.5rem;
+      display: inline-block;
+      margin: 0 5%;
+      margin-top: 1.8rem;
+    }
+    .contact-button img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
+    }
     /* Images */
     .big-logo {
       background-image: url('/logo2.png');
@@ -239,11 +258,11 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      width: 100%;
+      width: 60%;
       height: 50%;
       position: absolute;
-      top: 60%;
-      left: -00%;
+      top: 66%;
+      left: 35%;
       z-index: 2;
     }
     .img-satellite {
@@ -359,7 +378,7 @@
       overflow: hidden;
       background-color: #111110;
       text-align: center;
-      padding: 2rem 0;
+      padding: 1rem 0;
     }
     /* Customers */
     .partenaires {
@@ -395,8 +414,8 @@
   /* Styles pour les écrans moyens */
   @media (max-width: 1280px) {
     .welcome {
-      height: 60rem;
-      margin-top: -5rem;
+      height: 70rem;
+      margin-top: -7rem;
       padding-top: 0rem;
     }
     .big-logo {
@@ -433,7 +452,7 @@
       top: 0rem;
     }
     .content.projet-3 {
-      left: 3%;
+      left: 0%;
       top: 0rem;
     }
     .img-satellite {
@@ -447,9 +466,9 @@
       left: 70%;
     }
     .img-rocket {
-      width: 5rem;
-      top: 65%;
-      left: 10%;
+      width: 40rem;
+      top: 66%;
+      left: 37%;
     }
   }
 
@@ -506,31 +525,31 @@
       padding-top: 0rem;
     }
     .content.projet-1 {
-      left: -13%;
+      left: -15%;
       top: 0rem;
     }
     .content.projet-2 {
-      left: 7%;
+      left: 16%;
       top: 0rem;
     }
     .content.projet-3 {
-      left: -8%;
-      top: 0rem;
+      left: 0%;
+      top: 4rem;
     }
     .img-satellite {
       width: 30rem;
       top: 8%;
-      left: -2%;
+      left: -13%;
     }
     .img-balloon {
       width: 10rem;
       top: 20%;
-      left: 62%;
+      left: 60%;
     }
     .img-rocket {
-      width: 5rem;
-      top: 65%;
-      left: 10%;
+      width: 25rem;
+      top: 72%;
+      left: 47%;
     }
   }
 
