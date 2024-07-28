@@ -10,7 +10,6 @@
         </div>
         
         <div class="col-md-4 p-3 p-md-5 text-center border border-light">
-      
 </div>
 </div>
 </main>

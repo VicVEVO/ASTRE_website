@@ -1,6 +1,7 @@
 <script>
   import Navbar from "../widget/Navbar.svelte";
   import { onMount } from 'svelte';
+  import { Link } from "svelte-routing";
 
   let video, logo_img, rocket_img, satellite_img, balloon_img;
   let y = 0;
@@ -67,18 +68,42 @@
   <div class="customers">
     <h1 class="text-black partenaires">Nos partenaires</h1>
     <div class="photobanner">
-      <img src="/partenaires/cnes.png" alt="Logo 1">
-      <img src="/partenaires/csut.png" alt="Logo 2">
-      <img src="/partenaires/enac.png" alt="Logo 3">
-      <img src="/partenaires/n7.png" alt="Logo 4">
-      <img src="/partenaires/sup.png" alt="Logo 5">
-      <img src="/partenaires/ups.png" alt="Logo 6">
-      <img src="/partenaires/cnes.png" alt="Logo 7">
-      <img src="/partenaires/csut.png" alt="Logo 8">
-      <img src="/partenaires/enac.png" alt="Logo 9">
-      <img src="/partenaires/n7.png" alt="Logo 10">
-      <img src="/partenaires/sup.png" alt="Logo 11">
-      <img src="/partenaires/ups.png" alt="Logo 12">
+      <a href="https://cnes.fr/" target="_blank" rel="noopener noreferrer">
+        <img src="/partenaires/cnes.png" alt="Logo 1">
+      </a>
+      <a href="https://www.csut.cnrs.fr" target="_blank" rel="noopener noreferrer">
+        <img src="/partenaires/csut.png" alt="Logo 2">
+      </a>
+      <a href="https://www.enac.fr" target="_blank" rel="noopener noreferrer">
+        <img src="/partenaires/enac.png" alt="Logo 3">
+      </a>
+      <a href="https://www.enseeiht.fr" target="_blank" rel="noopener noreferrer">
+        <img src="/partenaires/n7.png" alt="Logo 4">
+      </a>
+      <a href="https://www.isae-supaero.fr" target="_blank" rel="noopener noreferrer">
+        <img src="/partenaires/sup.png" alt="Logo 5">
+      </a>
+      <a href="https://www.univ-tlse3.fr" target="_blank" rel="noopener noreferrer">
+        <img src="/partenaires/ups.png" alt="Logo 6">
+      </a>
+      <a href="https://cnes.fr/" target="_blank" rel="noopener noreferrer">
+        <img src="/partenaires/cnes.png" alt="Logo 7">
+      </a>
+      <a href="https://www.csut.cnrs.fr" target="_blank" rel="noopener noreferrer">
+        <img src="/partenaires/csut.png" alt="Logo 8">
+      </a>
+      <a href="https://www.enac.fr" target="_blank" rel="noopener noreferrer">
+        <img src="/partenaires/enac.png" alt="Logo 9">
+      </a>
+      <a href="https://www.enseeiht.fr" target="_blank" rel="noopener noreferrer">
+        <img src="/partenaires/n7.png" alt="Logo 10">
+      </a>
+      <a href="https://www.isae-supaero.fr" target="_blank" rel="noopener noreferrer">
+        <img src="/partenaires/sup.png" alt="Logo 11">
+      </a>
+      <a href="https://www.univ-tlse3.fr" target="_blank" rel="noopener noreferrer">
+        <img src="/partenaires/ups.png" alt="Logo 12">
+      </a>
     </div>
   </div>
 
@@ -91,9 +116,9 @@
       <h2 class="text-white smaller projet-1">
         TOLOSAT est un projet CubeSat 3U développé conjointement avec le Club<br>CubeSat de l’ISAE-SUPAERO dans lequel 70 étudiants sont répartis en 12<br>équipes de différents domaines d'ingénierie.
       </h2>
-      <a href="./projets" class="btn btn-primary rounded-pill btn-lg projet-1 btn-custom">
+      <Link to="/projets" class="btn btn-primary rounded-pill btn-lg projet-1 btn-custom">
         Lire la suite
-      </a>
+      </Link>
     </div>
 
     <div class="img-balloon" bind:this={balloon_img}></div>
@@ -103,9 +128,9 @@
       </h1>
       <h2 class="text-white smaller projet-2">
         ASTRE'LOON est le projet de ballon sonde de l'ASTRE. Ce dernier participe à <br> la campagne annuelle de lancement C'Space organisée par le CNES.      </h2>
-      <a href="projets" class="btn btn-primary rounded-pill btn-lg projet-2 btn-custom">
+      <Link to="/projets" class="btn btn-primary rounded-pill btn-lg projet-2 btn-custom">
         Lire la suite
-      </a>
+      </Link>
     </div>
     <div class="img-rocket" bind:this={rocket_img}></div>
     <div class="content projet-3">
@@ -115,26 +140,27 @@
       <h2 class="text-white smaller projet-3">
         ASTRE'LAUNCH est le programme de fusées expérimentales de l'ASTRE. 
       </h2>
-      <a href="projets" class="btn btn-primary rounded-pill btn-lg projet-3 btn-custom">
+      <Link to="/projets" class="btn btn-primary rounded-pill btn-lg projet-3 btn-custom">
         Lire la suite
-      </a>
+      </Link>
     </div>
   </div>
 
   <div class="contacts">
     <h1 class="text-white partenaires">Nous contacter</h1>
-  <a href="https://www.facebook.com/AstreToulouse/" class="contact-button">
+    <a href="https://www.facebook.com/AstreToulouse/" class="contact-button" target="_blank" rel="noopener noreferrer">
       <img src="/facebook.png" alt="facebook">
-  </a>
-  <a href="https://www.instagram.com/astre_space/" class="contact-button">
-    <img src="/insta.png" alt="instagram">
-  </a>
-  <a href="https://twitter.com/AstreToulouse" class="contact-button">
-    <img src="/twitter.png" alt="twitter">
-  </a>
-  <a href="https://google.com" class="contact-button">
-    <img src="/youtube.png" alt="youtube">
-  </a>
+    </a>
+    <a href="https://www.instagram.com/astre_space/" class="contact-button" target="_blank" rel="noopener noreferrer">
+      <img src="/insta.png" alt="instagram">
+    </a>
+    <a href="https://twitter.com/AstreToulouse" class="contact-button" target="_blank" rel="noopener noreferrer">
+      <img src="/twitter.png" alt="twitter">
+    </a>
+    <a href="https://google.com" class="contact-button" target="_blank" rel="noopener noreferrer">
+      <img src="/youtube.png" alt="youtube">
+    </a>
+    
   </div>
 
   <style>
