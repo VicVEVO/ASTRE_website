@@ -2,7 +2,8 @@
 	import { Link } from "svelte-routing";
 	let y = 0;
 	let opacity = 1;
-  
+	let openMenu = false;
+
 	$: {
 	  if (y < 600) {
 		opacity = 1;
@@ -12,34 +13,44 @@
 		opacity = 0;
 	  }
 	}
+
+	function toggleMenu() {
+		openMenu = !openMenu;
+	}
   </script>
   
   <nav class="navbar shadow navbar-expand-lg navbar-dark sticky-navbar" style="opacity: {opacity};">
 	<div class="container">
-	  <Link class="navbar-brand" to="/">
-		<img class="img-fluid logo-img" src="/logo.png" alt="bootstrap svelte"/>
-	  </Link>
-	  <button class="navbar-toggler btn rounded-circle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-		<img src="/menu-icon.png" alt="Menu Icon" width="26" height="26"/>
-	  </button>
-	  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+		<div class="navbar-header">
+		<Link class="logo" to="/">
+			<img class="logo-img" src="/logo.png" alt="Logo Icon"/>
+		</Link>
+		<button class="navbar-toggler more" type="button" on:click={toggleMenu}>
+			<img src="/more.png" alt="Menu Icon" width="40" height="40"/>
+		</button>
+		</div>
+	  
+	  {#if openMenu}
+	  <div class="" id="navbarNav">
 		<ul class="navbar-nav p-3">
-		  <li class="nav-item">
-			<Link class="nav-link" to="/">Home</Link>
+		  <li class="nav-item" id="textRight">
+			<Link class="nav-link" to="/">Accueil</Link>
 		  </li>
-		  <li class="nav-item">
+		  <li class="nav-item" id="textRight">
 			<Link class="nav-link" to="/projets">Projets</Link>
 		  </li>
-		  <li class="nav-item">
+		  <li class="nav-item" id="textRight">
 			<Link class="nav-link" to="/actualites">Actualités</Link>
 		  </li>
-		  <li class="nav-item">
+		  <li class="nav-item" id="textRight">
 			<a class="nav-link" href="mailto:astretoulouse@gmail.com?subject=Demande d'information supplémentaires">
-				Nous contacter →
+			  Nous contacter ✒
 			</a>
 		  </li>
 		</ul>
+	 	
 	  </div>
+	  {/if}
 	</div>
   </nav>
   
@@ -70,23 +81,50 @@
 	}
 	.container {
 	  max-width: 100%;
-	  padding: 0 300px;
+	}
+	.navbar-header {
+		display: flex;
+		align-items: center;
 	}
 	.logo-img {
-	  width: 50px;
-	  height: auto;
+		width: 50px;
+		height: 50px;
+		margin-top: .8rem;
 	}
 	.navbar-toggler {
 	  padding: 0;
 	}
+	#navbarNav {
+	  display: flex;
+	  justify-content: flex-end;
+	  flex-grow: 1;
+	}
+	#textRight {
+	  display: flex;
+	  justify-content: flex-end;
+	  flex-grow: 1;
+	}
 	.navbar-nav .nav-item .nav-link {
 	  color: rgb(255, 255, 255);
-	  background-color: #111110;
 	  transition: color 0.3s ease;
 	}
 	.navbar-nav .nav-item .nav-link:hover {
 	  color: #cccccc;
 	}
+	.more {
+		margin-left: auto;
+	}
+
+	@media (max-width: 991px) {
+		.sticky-navbar {
+			background-color: rgb(2, 2, 2);
+		}
+		.navbar-header {
+			width: 100%;
+			justify-content: space-between;
+		}
+	}
+
   </style>
   
   <svelte:window bind:scrollY={y} />

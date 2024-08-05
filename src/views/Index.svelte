@@ -147,7 +147,7 @@
   </div>
 
   <div class="contacts">
-    <h1 class="text-white partenaires">Nous contacter</h1>
+    <h1 class="text-white partenaires">Nos réseaux sociaux</h1>
     <a href="https://www.facebook.com/AstreToulouse/" class="contact-button" target="_blank" rel="noopener noreferrer">
       <img src="/facebook.png" alt="facebook">
     </a>
@@ -511,7 +511,7 @@
       font-size: calc(0.5rem + 0.25vw);
     }
     .welcome {
-      height: 45rem;
+      height: 55rem;
       margin-top: -5rem;
       padding-top: 0rem;
     }
@@ -526,8 +526,8 @@
       max-width: 90%;
     }
     .sum-up {
-      height: 30rem;
-      margin-top: 1rem;
+      height: 31rem;
+      margin-top: -1rem;
       padding-top: 0rem;
       padding: 2rem;
     }
@@ -569,7 +569,7 @@
     }
     .img-balloon {
       width: 10rem;
-      top: 20%;
+      top: 27%;
       left: 60%;
     }
     .img-rocket {
