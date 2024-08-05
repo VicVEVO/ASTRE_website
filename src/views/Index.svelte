@@ -358,7 +358,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 70rem;
+      height: 75rem;
       margin-top: -5rem;
       padding-top: 0rem;
       z-index: 0;
@@ -511,7 +511,7 @@
       font-size: calc(0.5rem + 0.25vw);
     }
     .welcome {
-      height: 55rem;
+      height: 65rem;
       margin-top: -5rem;
       padding-top: 0rem;
     }
