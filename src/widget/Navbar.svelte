@@ -1,8 +1,12 @@
 <script>
 	import { Link } from "svelte-routing";
+	import { onMount, onDestroy } from "svelte";
+	import { fade } from "svelte/transition";
+	import { bounceInOut, circInOut, elasticInOut, quintOut, sineIn, sineInOut, sineOut } from "svelte/easing";
 	let y = 0;
 	let opacity = 1;
 	let openMenu = false;
+	let outerWidth = 0;
 
 	$: {
 	  if (y < 600) {
@@ -17,6 +21,25 @@
 	function toggleMenu() {
 		openMenu = !openMenu;
 	}
+	function closeMenu() {
+		openMenu = false;
+	}
+
+	function handleClickOutside(event) {
+		const nav = document.querySelector(".navbar");
+		if (nav && !nav.contains(event.target)) {
+			closeMenu();
+		}
+	}
+
+	onMount(() => {
+		document.addEventListener("click", handleClickOutside);
+	});
+
+	onDestroy(() => {
+		document.removeEventListener("click", handleClickOutside);
+	});
+
   </script>
   
   <nav class="navbar shadow navbar-expand-lg navbar-dark sticky-navbar" style="opacity: {opacity};">
@@ -26,11 +49,15 @@
 			<img class="logo-img" src="/logo.png" alt="Logo Icon"/>
 		</Link>
 		<button class="navbar-toggler more" type="button" on:click={toggleMenu}>
-			<img src="/more.png" alt="Menu Icon" width="40" height="40"/>
+		{#if openMenu}
+			<img src="/close.png" alt="Menu Icon" class="transition close-icon" transition:fade={{ delay: 0, duration: 100, easing: sineIn }}/>
+		{:else}
+			<img src="/more.png" alt="Menu Icon" class="transition more-icon" transition:fade={{ delay: 0, duration: 100, easing: sineIn }}/>
+		{/if}
 		</button>
 		</div>
 	  
-	  {#if openMenu}
+	  {#if openMenu || outerWidth > 991}
 	  <div class="" id="navbarNav">
 		<ul class="navbar-nav p-3">
 		  <li class="nav-item" id="textRight">
@@ -48,7 +75,6 @@
 			</a>
 		  </li>
 		</ul>
-	 	
 	  </div>
 	  {/if}
 	</div>
@@ -63,13 +89,12 @@
 	}
   
 	.sticky-navbar {
-	  position: -webkit-sticky;
-	  position: sticky;
+	  position: fixed;
 	  top: 0;
 	  z-index: 1000;
 	  width: 100%;
 	  overflow-x: hidden;
-	  background-color: rgba(0, 0, 0, 0.2);
+	  background-color: rgba(0, 0, 0, 0.7);
 	  backdrop-filter: blur(10px);
 	  -webkit-backdrop-filter: blur(10px);
 	  font-family: 'Space_grotesk', sans-serif;
@@ -114,11 +139,22 @@
 	.more {
 		margin-left: auto;
 	}
+	.close-icon {
+		position: absolute;
+		top: 1rem;
+		right: 1.2rem;
+		width: 40px;
+		height: 40px;
+	}
+	.more-icon {
+		position: absolute;
+		top: .7rem;
+		right: .8rem;
+		width: 50px;
+		height: 50px;
+	}
 
 	@media (max-width: 991px) {
-		.sticky-navbar {
-			background-color: rgb(2, 2, 2);
-		}
 		.navbar-header {
 			width: 100%;
 			justify-content: space-between;
@@ -127,5 +163,5 @@
 
   </style>
   
-  <svelte:window bind:scrollY={y} />
+  <svelte:window bind:scrollY={y} bind:outerWidth/>
   
