@@ -2,7 +2,7 @@
 	import { Link } from "svelte-routing";
 	import { onMount, onDestroy } from "svelte";
 	import { fade } from "svelte/transition";
-	import { bounceInOut, circInOut, elasticInOut, quintOut, sineIn, sineInOut, sineOut } from "svelte/easing";
+	import { sineIn } from "svelte/easing";
 	let y = 0;
 	let opacity = 1;
 	let openMenu = false;

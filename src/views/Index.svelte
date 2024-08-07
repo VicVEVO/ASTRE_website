@@ -498,11 +498,9 @@
     }
   }
 
-  /* Styles pour les petits écrans */
   @media (max-width: 768px) {
   }
 
-  /* Styles pour les très petits écrans */
   @media (max-width: 480px) {
     .small {
       font-size: calc(1rem + 1.5vw);;
